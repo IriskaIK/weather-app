@@ -1,5 +1,8 @@
 # weather_app
+Technologies used in the project: openweathermap api, googleMaps api.
+There is no adaptability. The site is displayed correctly on fullHD displays and on laptop displays (partially)
 
+You can see it here: https://iriskaik.github.io/weather-app/dist/
 ## Project setup
 ```
 npm install
