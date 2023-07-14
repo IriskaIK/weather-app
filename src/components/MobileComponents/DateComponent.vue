@@ -39,12 +39,13 @@ export default {
 </script>
 <style scoped>
     .datetime_info{
-        width: 250px;
         color: #FFF;
         font-size: 40px;
         font-family: Belanosima;
+        margin: auto;
     }
     .date_container{
+        margin: auto;
         display: flex;
         margin-top: 20px;
 

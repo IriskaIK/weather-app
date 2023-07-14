@@ -9,8 +9,8 @@
 export default {
     data() {
         return {
-            monthNames : ["January", "February", "March", "April", "May", "June",
-            "July", "August", "September", "October", "November", "December"
+            monthNames : ["Jan", "Feb", "Mar", "Apr", "May", "June",
+            "July", "Aug", "Sep", "Oct", "Nov", "Dec"
             ],
             current_time : 0
         }
@@ -41,7 +41,7 @@ export default {
         color: #FFF;
         font-size: 54px;
         font-family: Belanosima;
-        width: 320px;
+        width: 350px;
     }
     .date_container{
         display: flex;

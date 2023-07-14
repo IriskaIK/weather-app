@@ -105,26 +105,25 @@ export default {
 </script>
 <style scoped>
     .city{
-        font-size: 110px;
-        max-height: 140px;
-        line-height: 140px;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        font-size: 65px;
+        max-height: 120px;
+        line-height: 70px;
+        overflow-wrap: break-word;
     }
     .country{
-        font-size: 64px; 
+        font-size: 50px; 
         line-height: 55px;
         margin-top: 20px;
+        
     }
     .info_container{
         text-align: center;
         font-family: 'Belanosima', sans-serif;
         color: #fff;
-        width: 750px;
     }
     .temperature_info{
-        font-size: 150px;
-        line-height: 150px;
+        font-size: 120px;
+        line-height: 120px;
         margin-right: 10%;
         font-family: 'Oswald', sans-serif;
 
