@@ -48,4 +48,17 @@ export default {
         margin-top: 50px;
 
     }
+    @media (max-width:1440px){
+        .datetime_info{
+        width: 250px;
+        color: #FFF;
+        font-size: 40px;
+        font-family: Belanosima;
+    }
+    .date_container{
+        display: flex;
+        margin-top: 20px;
+
+    }
+    }
 </style>

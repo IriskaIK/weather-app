@@ -67,4 +67,36 @@ export default {
     .search_icon:hover{
         color: rgb(217, 217, 217);
     }
+    @media (max-width:1440px){
+        .search_container{
+        display: flex;
+        align-items: center;
+        margin-top: 30px;
+    }
+    .city_input{
+        all: unset;
+        box-sizing: border-box;
+        padding: 12px 20px;
+        height: 46px;
+        width: 346px;
+        border-radius: 23px;
+        background: rgba(217, 217, 217, 0.56);
+        transition: box-shadow .2s ease-in, transform .2s ease-in;
+    }
+    .city_input:hover{
+        transform: translate(-1px, -1px);
+        box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.096);
+    }
+
+    .search_icon{
+        color: rgba(217, 217, 217, 0.56);
+        margin-left: 2%;
+        font-size: 40px;
+        cursor: pointer;  
+        transition: color .2s ease-in;   
+    }
+    .search_icon:hover{
+        color: rgb(217, 217, 217);
+    }
+    }
 </style>

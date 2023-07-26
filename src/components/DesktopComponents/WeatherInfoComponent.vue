@@ -145,4 +145,49 @@ export default {
         flex-direction: column;
         justify-content: center;
     }
+
+
+    @media (max-width:1440px){
+        .city{
+        font-size: 90px;
+        max-height: 120px;
+        line-height: 140px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .country{
+        font-size: 50px; 
+        line-height: 55px;
+        margin-top: 20px;
+    }
+    .info_container{
+        text-align: center;
+        font-family: 'Belanosima', sans-serif;
+        color: #fff;
+        width: 750px;
+    }
+    .temperature_info{
+        font-size: 120px;
+        line-height: 120px;
+        margin-right: 10%;
+        font-family: 'Oswald', sans-serif;
+
+    }
+    .condition_text{
+        font-size: 48px;
+        line-height: 48px;
+    }
+    .condition_ico{
+        font-size: 100px;
+    }
+    .weather_info{
+        display: flex;
+        justify-content: center;
+    }
+    .condition_info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    }
 </style>

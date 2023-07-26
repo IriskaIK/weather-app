@@ -25,5 +25,7 @@ export default {
     font-size: 20px;
     color: #fff;
 }
-    
+@media (max-width:1440px){
+        
+    }
 </style>

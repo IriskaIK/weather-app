@@ -61,5 +61,14 @@ export default {
     grid-column-gap: 20px;
     grid-row-gap: 20px;
 }
+@media (max-width:1440px){
+    .condtioin_card_conteiner{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 500px 500px;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+}
     
 </style>

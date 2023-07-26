@@ -2,7 +2,7 @@
     
     <div class="saved_container">
         <div class="saved_list" 
-        :class="{ 'opened_list' : IsOpen, 'closed_list': !IsOpen }"
+        :class="{ 'opened_list' : IsOpen}"
         >
             <div class="saved_list_title">
                 <i class="pin fa-solid fa-map-pin"></i>
@@ -10,10 +10,13 @@
             </div>
 
 
-            <div class="some_list">
-                <div class="saved_list_item" v-show="IsOpen" v-for="item in locationItems" :id="item" @click="setLocationFromList(item)">
-                    {{item}}
-                </div>
+            <div class="some_list" ref="element">
+                <transition-group name="list">
+                        <div class="saved_list_item" v-if="IsOpen" v-for="item in locationItems" :id="item"
+                            @click="setLocationFromList(item)">
+                            {{ item }}
+                        </div>
+                </transition-group>
             </div>
             
            
@@ -31,18 +34,31 @@
 </template>
 <script>
 import {getWeatherInLocation} from '@/services/WeatherApi.js'
+import { gsap } from 'gsap';
 export default {
     data() {
         return {
         isMoreHover: false,
         isSaveHover: false,
         IsOpen: false,
+        heightValue : '220px'
         
         
         };
     },
     methods: {
         ListPressed(){
+            if (this.locationItems.length == 0){
+                return
+            }
+            else if(this.locationItems.length  < 3){
+                this.heightValue = '110px'
+            }
+            else{
+                this.heightValue = '220px'
+            }
+            this.open_close_list.reversed() ? this.open_close_list.play() : this.open_close_list.reverse();
+
             this.IsOpen = !this.IsOpen
             /* todo: smoth saved_list animation  */
 
@@ -66,6 +82,23 @@ export default {
     computed:{
         locationItems(){
             return this.$store.getters.getSavedLocations()
+        },
+        open_close_list() {
+            console.log(this.$refs.element)
+            return gsap.fromTo(
+                this.$refs.element,
+                {
+                    opacity: 0,
+                    height: 0,
+                },
+                {
+                    opacity: 1,
+                    height: this.heightValue,
+                    duration: 0.5,
+                    paused: true,
+                    reversed: true,
+                }
+            )
         }
     }
 
@@ -88,7 +121,7 @@ export default {
     }
     .saved_list{
         position: relative;
-        max-height: 260px;
+        max-height: 220px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -100,11 +133,11 @@ export default {
         margin-right: 10px;
         border: 7px solid rgba(255, 255, 255, 0.50);
 
-        transition: max-height .5s ease-out;
+        /* transition: max-height .5s ease-out; */
     }
     .opened_list{
-        max-height: 260px;
-        transition: max-height .5s ease-out;
+        max-height: 220px;
+        /* transition: max-height .5s ease-out; */
     }
     .closed_list{
         max-height: 120px;
@@ -189,6 +222,18 @@ export default {
         cursor: pointer;
         --fa-animation-iteration-count:1;
 
+    }
+
+    .list-leave-active {
+    transition: all 1s ease;
+    }
+    .list-leave-to {
+    opacity: 0;
+    transform: translateX(30px);
+    }
+    .list-leave-from{
+        opacity: 1;
+        transform: translateX(0);
     }
     
 </style>
